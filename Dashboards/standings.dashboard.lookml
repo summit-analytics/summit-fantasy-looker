@@ -64,91 +64,51 @@
       body_text: |
         | Seed | Team | Score |
         |------|------|-------|
-        | 1 | **AFC Richmond** | BYE |
-        | 2 | **Believe** | BYE |
-        | 3 | ~~Roy Kent FC~~ | 102.24 |
-        | 6 | **Biscuits With The Boss** | 110.52 |
-        | 4 | **Be A Goldfish** | 109.80 |
-        | 5 | ~~Diamond Dogs~~ | 86.90 |
+        | 1 | AFC Richmond | BYE |
+        | 2 | Believe | BYE |
+        | 3 | Roy Kent FC | 102.24 |
+        | 6 | Biscuits With The Boss | 110.52 |
+        | 4 | Be A Goldfish | 109.80 |
+        | 5 | Diamond Dogs | 86.90 |
       row: 4
       col: 0
       width: 8
       height: 7
 
-    # Playoff Bracket - Week 16 Semifinal 1
-    - title: "Week 16: Semifinal 1"
-      name: bracket_semi1
+    # Week 16 Semifinals - Plain text
+    - title: "Week 16: Semifinals"
+      name: bracket_week16
       type: text
       subtitle_text: ""
       body_text: |
-        | Team | Score |
-        |------|-------|
-        | **AFC Richmond** | 116.08 |
-        | ~~Biscuits With The Boss~~ | 75.50 |
+        Semifinal 1:
+        AFC Richmond 116.08 def. Biscuits With The Boss 75.50
+
+        Semifinal 2:
+        Believe 128.08 def. Be A Goldfish 110.60
+
+        5th Place Game:
+        Diamond Dogs 128.70 def. Roy Kent FC 59.52
       row: 4
       col: 8
-      width: 5
-      height: 3
+      width: 8
+      height: 7
 
-    # Playoff Bracket - Week 16 Semifinal 2
-    - title: "Week 16: Semifinal 2"
-      name: bracket_semi2
+    # Week 17 Finals - Plain text
+    - title: "Week 17: Finals"
+      name: bracket_week17
       type: text
       subtitle_text: ""
       body_text: |
-        | Team | Score |
-        |------|-------|
-        | **Believe** | 128.08 |
-        | ~~Be A Goldfish~~ | 110.60 |
+        🏆 Championship:
+        AFC Richmond 110.62 def. Believe 85.98
+
+        🥉 3rd Place Game:
+        Be A Goldfish 102.52 def. Biscuits With The Boss 93.18
       row: 4
-      col: 13
-      width: 5
-      height: 3
-
-    # Playoff Bracket - Week 16 5th Place
-    - title: "Week 16: 5th Place"
-      name: bracket_5th
-      type: text
-      subtitle_text: ""
-      body_text: |
-        | Team | Score |
-        |------|-------|
-        | ~~Roy Kent FC~~ | 59.52 |
-        | **Diamond Dogs** | 128.70 |
-      row: 7
-      col: 8
-      width: 5
-      height: 3
-
-    # Playoff Bracket - Week 17 Championship
-    - title: "Week 17: Championship 🏆"
-      name: bracket_championship
-      type: text
-      subtitle_text: ""
-      body_text: |
-        | Team | Score |
-        |------|-------|
-        | **AFC Richmond** 🏆 | 110.62 |
-        | ~~Believe~~ | 85.98 |
-      row: 4
-      col: 18
-      width: 6
-      height: 3
-
-    # Playoff Bracket - Week 17 3rd Place
-    - title: "Week 17: 3rd Place"
-      name: bracket_3rd
-      type: text
-      subtitle_text: ""
-      body_text: |
-        | Team | Score |
-        |------|-------|
-        | **Be A Goldfish** 🥉 | 102.52 |
-        | ~~Biscuits With The Boss~~ | 93.18 |
-      row: 7
-      col: 18
-      width: 6
-      height: 3
+      col: 16
+      width: 8
+      height: 7
 
     # League Standings Table with All-Play columns
     - title: "League Standings"
