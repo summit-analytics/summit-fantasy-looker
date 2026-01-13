@@ -30,69 +30,105 @@
       field: standings.league_key
 
   elements:
-    # Podium - 1st, 2nd, 3rd Place
-    - title: "1st Place"
-      name: first_place
-      explore: standings
-      type: single_value
-      fields: [standings.team_name]
-      filters:
-        standings.standings_rank: "1"
-      limit: 1
-      custom_color_enabled: true
-      custom_color: "#FFD700"
-      show_single_value_title: true
-      single_value_title: "Champion"
-      show_comparison: false
-      listen:
-        season: standings.season
-        league: standings.league_key
+    # Top Banner - Podium styled like Yahoo
+    - title: ""
+      name: podium_banner
+      type: text
+      title_text: ""
+      subtitle_text: ""
+      body_text: |
+        <div style="display: flex; justify-content: space-around; align-items: center; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 20px; border-radius: 8px; margin-bottom: 10px;">
+          <div style="text-align: center; flex: 1; border-right: 1px solid #374151;">
+            <div style="font-size: 12px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 5px;">🏆 1st Place</div>
+            <div style="font-size: 18px; font-weight: bold; color: #FFD700;">Taylor Park Boys</div>
+          </div>
+          <div style="text-align: center; flex: 1; border-right: 1px solid #374151;">
+            <div style="font-size: 12px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 5px;">🥈 2nd Place</div>
+            <div style="font-size: 18px; font-weight: bold; color: #C0C0C0;">Nacua Matata</div>
+          </div>
+          <div style="text-align: center; flex: 1;">
+            <div style="font-size: 12px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 5px;">🥉 3rd Place</div>
+            <div style="font-size: 18px; font-weight: bold; color: #CD7F32;">McMayhem</div>
+          </div>
+        </div>
       row: 0
       col: 0
-      width: 8
+      width: 24
       height: 4
 
-    - title: "2nd Place"
-      name: second_place
-      explore: standings
-      type: single_value
-      fields: [standings.team_name]
-      filters:
-        standings.standings_rank: "2"
-      limit: 1
-      custom_color_enabled: true
-      custom_color: "#C0C0C0"
-      show_single_value_title: true
-      single_value_title: "Runner Up"
-      show_comparison: false
-      listen:
-        season: standings.season
-        league: standings.league_key
-      row: 0
-      col: 8
-      width: 8
-      height: 4
-
-    - title: "3rd Place"
-      name: third_place
-      explore: standings
-      type: single_value
-      fields: [standings.team_name]
-      filters:
-        standings.standings_rank: "3"
-      limit: 1
-      custom_color_enabled: true
-      custom_color: "#CD7F32"
-      show_single_value_title: true
-      single_value_title: "3rd Place"
-      show_comparison: false
-      listen:
-        season: standings.season
-        league: standings.league_key
-      row: 0
-      col: 16
-      width: 8
-      height: 4
+    # Playoff Bracket - Static HTML
+    - title: ""
+      name: playoff_bracket_html
+      type: text
+      title_text: "Playoff Bracket"
+      subtitle_text: "Weeks 15-17"
+      body_text: |
+        <style>
+          .bracket-container { display: flex; justify-content: space-between; font-family: -apple-system, sans-serif; font-size: 11px; }
+          .round { flex: 1; padding: 0 5px; }
+          .round-title { background: #1a1a2e; color: white; padding: 8px; text-align: center; border-radius: 4px; margin-bottom: 10px; font-weight: bold; }
+          .matchup { background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 6px; margin-bottom: 8px; overflow: hidden; }
+          .matchup-header { background: #e5e7eb; padding: 4px 8px; font-size: 10px; color: #6b7280; }
+          .team { padding: 8px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; }
+          .team:last-child { border-bottom: none; }
+          .team.winner { background: #ecfdf5; }
+          .team.loser { color: #9ca3af; text-decoration: line-through; }
+          .score { font-weight: bold; }
+        </style>
+        <div class="bracket-container">
+          <div class="round">
+            <div class="round-title">Week 15: Quarterfinals</div>
+            <div class="matchup">
+              <div class="team winner"><span>Taylor Park Boys</span><span class="score">BYE</span></div>
+            </div>
+            <div class="matchup">
+              <div class="team loser"><span>11 Men on grass</span><span class="score">102.24</span></div>
+              <div class="team winner"><span>Bum Rushers</span><span class="score">110.52</span></div>
+            </div>
+            <div class="matchup">
+              <div class="team winner"><span>McMayhem</span><span class="score">109.80</span></div>
+              <div class="team loser"><span>Pierogi People Eater</span><span class="score">86.90</span></div>
+            </div>
+            <div class="matchup">
+              <div class="team winner"><span>Nacua Matata</span><span class="score">BYE</span></div>
+            </div>
+          </div>
+          <div class="round">
+            <div class="round-title">Week 16: Semifinals</div>
+            <div class="matchup">
+              <div class="matchup-header">Semifinal</div>
+              <div class="team winner"><span>Taylor Park Boys</span><span class="score">116.08</span></div>
+              <div class="team loser"><span>Bum Rushers</span><span class="score">75.50</span></div>
+            </div>
+            <div class="matchup">
+              <div class="matchup-header">Semifinal</div>
+              <div class="team winner"><span>Nacua Matata</span><span class="score">128.08</span></div>
+              <div class="team loser"><span>McMayhem</span><span class="score">110.60</span></div>
+            </div>
+            <div class="matchup">
+              <div class="matchup-header">5th Place Game</div>
+              <div class="team loser"><span>11 Men on grass</span><span class="score">59.52</span></div>
+              <div class="team winner"><span>Pierogi People Eater</span><span class="score">128.70</span></div>
+            </div>
+          </div>
+          <div class="round">
+            <div class="round-title">Week 17: Finals</div>
+            <div class="matchup">
+              <div class="matchup-header">Championship</div>
+              <div class="team winner"><span>Taylor Park Boys</span><span class="score">110.62</span></div>
+              <div class="team loser"><span>Nacua Matata</span><span class="score">85.98</span></div>
+            </div>
+            <div class="matchup">
+              <div class="matchup-header">3rd Place Game</div>
+              <div class="team winner"><span>McMayhem</span><span class="score">102.52</span></div>
+              <div class="team loser"><span>Bum Rushers</span><span class="score">93.18</span></div>
+            </div>
+          </div>
+        </div>
+      row: 4
+      col: 0
+      width: 24
+      height: 10
 
     # League Standings Table with All-Play columns
     - title: "League Standings"
@@ -130,36 +166,10 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 4
+      row: 14
       col: 0
       width: 24
       height: 12
-
-    # Playoff Bracket placeholder
-    - title: "Playoff Bracket"
-      name: playoff_bracket
-      explore: standings
-      type: looker_grid
-      fields: [
-        standings.playoff_seed,
-        standings.team_name,
-        standings.record,
-        standings.points_for
-      ]
-      filters:
-        standings.playoff_seed: "NOT NULL"
-      sorts: [standings.playoff_seed asc]
-      limit: 500
-      show_view_names: false
-      show_row_numbers: false
-      table_theme: white
-      listen:
-        season: standings.season
-        league: standings.league_key
-      row: 16
-      col: 0
-      width: 12
-      height: 8
 
     # Points For Distribution
     - title: "Points For Distribution"
@@ -185,8 +195,8 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 16
-      col: 12
+      row: 26
+      col: 0
       width: 12
       height: 8
 
@@ -214,8 +224,8 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 24
-      col: 0
+      row: 26
+      col: 12
       width: 12
       height: 8
 
@@ -234,9 +244,9 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 24
-      col: 12
-      width: 4
+      row: 34
+      col: 0
+      width: 8
       height: 4
 
     - title: "Avg Points For"
@@ -253,26 +263,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 24
-      col: 16
-      width: 4
-      height: 4
-
-    - title: "Avg Points Against"
-      name: avg_points_against
-      explore: standings
-      type: single_value
-      fields: [standings.avg_points_against]
-      limit: 500
-      custom_color_enabled: true
-      custom_color: "#EA4335"
-      show_single_value_title: true
-      single_value_title: "Avg Points Against"
-      show_comparison: false
-      listen:
-        season: standings.season
-        league: standings.league_key
-      row: 24
-      col: 20
-      width: 4
+      row: 34
+      col: 8
+      width: 8
       height: 4
