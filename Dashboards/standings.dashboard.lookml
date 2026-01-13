@@ -30,105 +30,86 @@
       field: standings.league_key
 
   elements:
-    # Top Banner - Podium styled like Yahoo
+    # Top Banner - Podium with Ted Lasso names
     - title: ""
       name: podium_banner
       type: text
       title_text: ""
       subtitle_text: ""
-      body_text: |
-        <div style="display: flex; justify-content: space-around; align-items: center; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 20px; border-radius: 8px; margin-bottom: 10px;">
-          <div style="text-align: center; flex: 1; border-right: 1px solid #374151;">
-            <div style="font-size: 12px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 5px;">🏆 1st Place</div>
-            <div style="font-size: 18px; font-weight: bold; color: #FFD700;">Taylor Park Boys</div>
-          </div>
-          <div style="text-align: center; flex: 1; border-right: 1px solid #374151;">
-            <div style="font-size: 12px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 5px;">🥈 2nd Place</div>
-            <div style="font-size: 18px; font-weight: bold; color: #C0C0C0;">Nacua Matata</div>
-          </div>
-          <div style="text-align: center; flex: 1;">
-            <div style="font-size: 12px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 5px;">🥉 3rd Place</div>
-            <div style="font-size: 18px; font-weight: bold; color: #CD7F32;">McMayhem</div>
-          </div>
-        </div>
+      body_text: "🏆 **AFC Richmond** | 🥈 **Believe** | 🥉 **Be A Goldfish**"
       row: 0
       col: 0
       width: 24
-      height: 4
+      height: 2
 
-    # Playoff Bracket - Static HTML
-    - title: ""
-      name: playoff_bracket_html
+    # Playoff Bracket - Week 15 Quarterfinals
+    - title: "Week 15: Quarterfinals"
+      name: bracket_week15
       type: text
-      title_text: "Playoff Bracket"
-      subtitle_text: "Weeks 15-17"
+      subtitle_text: ""
       body_text: |
-        <style>
-          .bracket-container { display: flex; justify-content: space-between; font-family: -apple-system, sans-serif; font-size: 11px; }
-          .round { flex: 1; padding: 0 5px; }
-          .round-title { background: #1a1a2e; color: white; padding: 8px; text-align: center; border-radius: 4px; margin-bottom: 10px; font-weight: bold; }
-          .matchup { background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 6px; margin-bottom: 8px; overflow: hidden; }
-          .matchup-header { background: #e5e7eb; padding: 4px 8px; font-size: 10px; color: #6b7280; }
-          .team { padding: 8px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; }
-          .team:last-child { border-bottom: none; }
-          .team.winner { background: #ecfdf5; }
-          .team.loser { color: #9ca3af; text-decoration: line-through; }
-          .score { font-weight: bold; }
-        </style>
-        <div class="bracket-container">
-          <div class="round">
-            <div class="round-title">Week 15: Quarterfinals</div>
-            <div class="matchup">
-              <div class="team winner"><span>Taylor Park Boys</span><span class="score">BYE</span></div>
-            </div>
-            <div class="matchup">
-              <div class="team loser"><span>11 Men on grass</span><span class="score">102.24</span></div>
-              <div class="team winner"><span>Bum Rushers</span><span class="score">110.52</span></div>
-            </div>
-            <div class="matchup">
-              <div class="team winner"><span>McMayhem</span><span class="score">109.80</span></div>
-              <div class="team loser"><span>Pierogi People Eater</span><span class="score">86.90</span></div>
-            </div>
-            <div class="matchup">
-              <div class="team winner"><span>Nacua Matata</span><span class="score">BYE</span></div>
-            </div>
-          </div>
-          <div class="round">
-            <div class="round-title">Week 16: Semifinals</div>
-            <div class="matchup">
-              <div class="matchup-header">Semifinal</div>
-              <div class="team winner"><span>Taylor Park Boys</span><span class="score">116.08</span></div>
-              <div class="team loser"><span>Bum Rushers</span><span class="score">75.50</span></div>
-            </div>
-            <div class="matchup">
-              <div class="matchup-header">Semifinal</div>
-              <div class="team winner"><span>Nacua Matata</span><span class="score">128.08</span></div>
-              <div class="team loser"><span>McMayhem</span><span class="score">110.60</span></div>
-            </div>
-            <div class="matchup">
-              <div class="matchup-header">5th Place Game</div>
-              <div class="team loser"><span>11 Men on grass</span><span class="score">59.52</span></div>
-              <div class="team winner"><span>Pierogi People Eater</span><span class="score">128.70</span></div>
-            </div>
-          </div>
-          <div class="round">
-            <div class="round-title">Week 17: Finals</div>
-            <div class="matchup">
-              <div class="matchup-header">Championship</div>
-              <div class="team winner"><span>Taylor Park Boys</span><span class="score">110.62</span></div>
-              <div class="team loser"><span>Nacua Matata</span><span class="score">85.98</span></div>
-            </div>
-            <div class="matchup">
-              <div class="matchup-header">3rd Place Game</div>
-              <div class="team winner"><span>McMayhem</span><span class="score">102.52</span></div>
-              <div class="team loser"><span>Bum Rushers</span><span class="score">93.18</span></div>
-            </div>
-          </div>
-        </div>
-      row: 4
+        | Seed | Team | Score |
+        |------|------|-------|
+        | 1 | **AFC Richmond** | BYE |
+        | 2 | **Believe** | BYE |
+        | 3 | ~~Roy Kent FC~~ | 102.24 |
+        | 6 | **Biscuits With The Boss** | 110.52 |
+        | 4 | **Be A Goldfish** | 109.80 |
+        | 5 | ~~Diamond Dogs~~ | 86.90 |
+      row: 2
       col: 0
-      width: 24
-      height: 10
+      width: 8
+      height: 6
+
+    # Playoff Bracket - Week 16 Semifinals
+    - title: "Week 16: Semifinals"
+      name: bracket_week16
+      type: text
+      subtitle_text: ""
+      body_text: |
+        **Semifinal 1**
+        | Team | Score |
+        |------|-------|
+        | **AFC Richmond** | 116.08 |
+        | ~~Biscuits With The Boss~~ | 75.50 |
+
+        **Semifinal 2**
+        | Team | Score |
+        |------|-------|
+        | **Believe** | 128.08 |
+        | ~~Be A Goldfish~~ | 110.60 |
+
+        **5th Place Game**
+        | Team | Score |
+        |------|-------|
+        | ~~Roy Kent FC~~ | 59.52 |
+        | **Diamond Dogs** | 128.70 |
+      row: 2
+      col: 8
+      width: 8
+      height: 6
+
+    # Playoff Bracket - Week 17 Finals
+    - title: "Week 17: Finals"
+      name: bracket_week17
+      type: text
+      subtitle_text: ""
+      body_text: |
+        **Championship**
+        | Team | Score |
+        |------|-------|
+        | **AFC Richmond** 🏆 | 110.62 |
+        | ~~Believe~~ | 85.98 |
+
+        **3rd Place Game**
+        | Team | Score |
+        |------|-------|
+        | **Be A Goldfish** 🥉 | 102.52 |
+        | ~~Biscuits With The Boss~~ | 93.18 |
+      row: 2
+      col: 16
+      width: 8
+      height: 6
 
     # League Standings Table with All-Play columns
     - title: "League Standings"
@@ -166,7 +147,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 14
+      row: 8
       col: 0
       width: 24
       height: 12
@@ -195,7 +176,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 26
+      row: 20
       col: 0
       width: 12
       height: 8
@@ -224,7 +205,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 26
+      row: 20
       col: 12
       width: 12
       height: 8
@@ -244,7 +225,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 34
+      row: 28
       col: 0
       width: 8
       height: 4
@@ -263,7 +244,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 34
+      row: 28
       col: 8
       width: 8
       height: 4
