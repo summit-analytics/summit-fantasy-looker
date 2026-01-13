@@ -1,0 +1,12 @@
+# Looker
+.cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Claude Code CLI
+.claude/
