@@ -30,17 +30,31 @@
       field: standings.league_key
 
   elements:
-    # Top Banner - Podium with Ted Lasso names
+    # Top Banner - Podium with Ted Lasso names (HTML styled)
     - title: ""
       name: podium_banner
       type: text
       title_text: ""
       subtitle_text: ""
-      body_text: "🏆 **AFC Richmond** | 🥈 **Believe** | 🥉 **Be A Goldfish**"
+      body_text: |
+        <div style="display: flex; justify-content: space-around; align-items: center; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 20px; border-radius: 8px;">
+          <div style="text-align: center; flex: 1; border-right: 1px solid #374151;">
+            <div style="font-size: 12px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 5px;">🏆 1st Place</div>
+            <div style="font-size: 18px; font-weight: bold; color: #FFD700;">AFC Richmond</div>
+          </div>
+          <div style="text-align: center; flex: 1; border-right: 1px solid #374151;">
+            <div style="font-size: 12px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 5px;">🥈 2nd Place</div>
+            <div style="font-size: 18px; font-weight: bold; color: #C0C0C0;">Believe</div>
+          </div>
+          <div style="text-align: center; flex: 1;">
+            <div style="font-size: 12px; color: #9CA3AF; text-transform: uppercase; margin-bottom: 5px;">🥉 3rd Place</div>
+            <div style="font-size: 18px; font-weight: bold; color: #CD7F32;">Be A Goldfish</div>
+          </div>
+        </div>
       row: 0
       col: 0
       width: 24
-      height: 2
+      height: 4
 
     # Playoff Bracket - Week 15 Quarterfinals
     - title: "Week 15: Quarterfinals"
@@ -56,60 +70,85 @@
         | 6 | **Biscuits With The Boss** | 110.52 |
         | 4 | **Be A Goldfish** | 109.80 |
         | 5 | ~~Diamond Dogs~~ | 86.90 |
-      row: 2
+      row: 4
       col: 0
       width: 8
-      height: 6
+      height: 7
 
-    # Playoff Bracket - Week 16 Semifinals
-    - title: "Week 16: Semifinals"
-      name: bracket_week16
+    # Playoff Bracket - Week 16 Semifinal 1
+    - title: "Week 16: Semifinal 1"
+      name: bracket_semi1
       type: text
       subtitle_text: ""
       body_text: |
-        **Semifinal 1**
         | Team | Score |
         |------|-------|
         | **AFC Richmond** | 116.08 |
         | ~~Biscuits With The Boss~~ | 75.50 |
+      row: 4
+      col: 8
+      width: 5
+      height: 3
 
-        **Semifinal 2**
+    # Playoff Bracket - Week 16 Semifinal 2
+    - title: "Week 16: Semifinal 2"
+      name: bracket_semi2
+      type: text
+      subtitle_text: ""
+      body_text: |
         | Team | Score |
         |------|-------|
         | **Believe** | 128.08 |
         | ~~Be A Goldfish~~ | 110.60 |
+      row: 4
+      col: 13
+      width: 5
+      height: 3
 
-        **5th Place Game**
+    # Playoff Bracket - Week 16 5th Place
+    - title: "Week 16: 5th Place"
+      name: bracket_5th
+      type: text
+      subtitle_text: ""
+      body_text: |
         | Team | Score |
         |------|-------|
         | ~~Roy Kent FC~~ | 59.52 |
         | **Diamond Dogs** | 128.70 |
-      row: 2
+      row: 7
       col: 8
-      width: 8
-      height: 6
+      width: 5
+      height: 3
 
-    # Playoff Bracket - Week 17 Finals
-    - title: "Week 17: Finals"
-      name: bracket_week17
+    # Playoff Bracket - Week 17 Championship
+    - title: "Week 17: Championship 🏆"
+      name: bracket_championship
       type: text
       subtitle_text: ""
       body_text: |
-        **Championship**
         | Team | Score |
         |------|-------|
         | **AFC Richmond** 🏆 | 110.62 |
         | ~~Believe~~ | 85.98 |
+      row: 4
+      col: 18
+      width: 6
+      height: 3
 
-        **3rd Place Game**
+    # Playoff Bracket - Week 17 3rd Place
+    - title: "Week 17: 3rd Place"
+      name: bracket_3rd
+      type: text
+      subtitle_text: ""
+      body_text: |
         | Team | Score |
         |------|-------|
         | **Be A Goldfish** 🥉 | 102.52 |
         | ~~Biscuits With The Boss~~ | 93.18 |
-      row: 2
-      col: 16
-      width: 8
-      height: 6
+      row: 7
+      col: 18
+      width: 6
+      height: 3
 
     # League Standings Table with All-Play columns
     - title: "League Standings"
@@ -147,7 +186,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 8
+      row: 11
       col: 0
       width: 24
       height: 12
@@ -176,7 +215,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 20
+      row: 23
       col: 0
       width: 12
       height: 8
@@ -205,7 +244,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 20
+      row: 23
       col: 12
       width: 12
       height: 8
@@ -225,7 +264,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 28
+      row: 31
       col: 0
       width: 8
       height: 4
@@ -244,7 +283,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 28
+      row: 31
       col: 8
       width: 8
       height: 4
