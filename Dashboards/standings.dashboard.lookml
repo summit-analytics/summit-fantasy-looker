@@ -124,8 +124,6 @@
         standings.points_for,
         standings.points_against,
         standings.point_differential,
-        luck_standings.all_play_record,
-        luck_standings.all_play_win_pct,
         standings.streak,
         standings.games_back
       ]
