@@ -73,7 +73,7 @@
       row: 4
       col: 0
       width: 8
-      height: 7
+      height: 5
 
     # Week 16 Semifinals - Plain text
     - title: "Week 16: Semifinals"
@@ -92,7 +92,7 @@
       row: 4
       col: 8
       width: 8
-      height: 7
+      height: 5
 
     # Week 17 Finals - Plain text
     - title: "Week 17: Finals"
@@ -108,7 +108,7 @@
       row: 4
       col: 16
       width: 8
-      height: 7
+      height: 5
 
     # League Standings Table with All-Play columns
     - title: "League Standings"
@@ -146,7 +146,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 11
+      row: 9
       col: 0
       width: 24
       height: 12
@@ -175,7 +175,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 23
+      row: 21
       col: 0
       width: 12
       height: 8
@@ -204,7 +204,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 23
+      row: 21
       col: 12
       width: 12
       height: 8
@@ -224,7 +224,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 31
+      row: 29
       col: 0
       width: 8
       height: 4
@@ -243,7 +243,7 @@
       listen:
         season: standings.season
         league: standings.league_key
-      row: 31
+      row: 29
       col: 8
       width: 8
       height: 4
