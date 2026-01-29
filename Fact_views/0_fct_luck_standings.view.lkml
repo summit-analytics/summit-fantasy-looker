@@ -106,32 +106,12 @@ view: fct_luck_standings {
     sql: ${TABLE}.luck_index ;;
     value_format_name: decimal_1
     description: "Actual Wins - Expected Wins (positive = lucky)"
-    html:
-      {% if value > 0 %}
-        <span style="color: #34A853;">+{{ rendered_value }}</span>
-      {% elsif value < 0 %}
-        <span style="color: #EA4335;">{{ rendered_value }}</span>
-      {% else %}
-        {{ rendered_value }}
-      {% endif %} ;;
   }
 
   dimension: luck_rating {
     type: string
     sql: ${TABLE}.luck_rating ;;
     description: "Luck interpretation (Very Lucky, Lucky, Neutral, Unlucky, Very Unlucky)"
-    html:
-      {% if value == 'Very Lucky' %}
-        <span style="color: #34A853; font-weight: bold;">{{ value }}</span>
-      {% elsif value == 'Lucky' %}
-        <span style="color: #34A853;">{{ value }}</span>
-      {% elsif value == 'Very Unlucky' %}
-        <span style="color: #EA4335; font-weight: bold;">{{ value }}</span>
-      {% elsif value == 'Unlucky' %}
-        <span style="color: #EA4335;">{{ value }}</span>
-      {% else %}
-        {{ value }}
-      {% endif %} ;;
   }
 
   # Points
