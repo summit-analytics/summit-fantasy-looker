@@ -76,7 +76,7 @@
       listen:
         season: luck_analysis.season
         league: luck_analysis.league_key
-      row: 4
+      row: 18
       col: 0
       width: 12
       height: 10
@@ -105,7 +105,7 @@
       listen:
         season: luck_analysis.season
         league: luck_analysis.league_key
-      row: 4
+      row: 18
       col: 12
       width: 12
       height: 10
@@ -160,7 +160,7 @@
       listen:
         season: luck_analysis.season
         league: luck_analysis.league_key
-      row: 14
+      row: 8
       col: 0
       width: 24
       height: 10
@@ -196,7 +196,7 @@
       listen:
         season: luck_analysis.season
         league: luck_analysis.league_key
-      row: 24
+      row: 28
       col: 0
       width: 24
       height: 10
@@ -219,7 +219,7 @@
       listen:
         season: luck_analysis.season
         league: luck_analysis.league_key
-      row: 34
+      row: 4
       col: 0
       width: 8
       height: 4
@@ -241,7 +241,7 @@
       listen:
         season: luck_analysis.season
         league: luck_analysis.league_key
-      row: 34
+      row: 4
       col: 8
       width: 8
       height: 4
@@ -263,7 +263,7 @@
       listen:
         season: luck_analysis.season
         league: luck_analysis.league_key
-      row: 34
+      row: 4
       col: 16
       width: 8
       height: 4
