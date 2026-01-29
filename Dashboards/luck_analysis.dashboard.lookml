@@ -49,67 +49,6 @@
       width: 24
       height: 4
 
-    # Luck Index Bar Chart - Horizontal
-    - title: "Luck Index by Team"
-      name: luck_index_bar
-      explore: luck_analysis
-      type: looker_bar
-      fields: [
-        luck_analysis.team_name,
-        luck_analysis.luck_index
-      ]
-      sorts: [luck_analysis.luck_index desc]
-      limit: 500
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: false
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      show_x_axis_label: false
-      show_x_axis_ticks: true
-      show_value_labels: true
-      series_colors:
-        luck_analysis.luck_index: "#5C6BC0"
-      reference_lines: [{reference_type: line, range_start: max, range_end: min, margin_top: deviation,
-          margin_value: mean, margin_bottom: deviation, label_position: left, color: "#EA4335",
-          line_value: '0', label: 'Neutral'}]
-      listen:
-        season: luck_analysis.season
-        league: luck_analysis.league_key
-      row: 18
-      col: 0
-      width: 12
-      height: 10
-
-    # All-Play Win % Bar Chart
-    - title: "All-Play Win %"
-      name: all_play_pct_bar
-      explore: luck_analysis
-      type: looker_bar
-      fields: [
-        luck_analysis.team_name,
-        luck_analysis.all_play_win_pct
-      ]
-      sorts: [luck_analysis.all_play_win_pct desc]
-      limit: 500
-      x_axis_gridlines: false
-      y_axis_gridlines: true
-      show_view_names: false
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      show_x_axis_label: false
-      show_x_axis_ticks: true
-      show_value_labels: true
-      series_colors:
-        luck_analysis.all_play_win_pct: "#26A69A"
-      listen:
-        season: luck_analysis.season
-        league: luck_analysis.league_key
-      row: 18
-      col: 12
-      width: 12
-      height: 10
-
     # Luck Analysis Table
     - title: "Luck Standings"
       name: luck_table
@@ -139,14 +78,22 @@
       enable_conditional_formatting: true
       conditional_formatting: [
         {
-          type: along a scale...,
-          value:,
-          background_color: "#26A69A",
-          font_color:,
+          type: greater than,
+          value: 0,
+          background_color: "#34A853",
+          font_color: "#FFFFFF",
           color_application: {
             collection_id: google,
-            palette_id: google-diverging-0,
-            options: { steps: 5, reverse: true }
+            custom: {
+              id: luck-green-red,
+              label: Luck Green Red,
+              type: continuous,
+              stops: [
+                { color: "#EA4335", offset: 0 },
+                { color: "#FFFFFF", offset: 50 },
+                { color: "#34A853", offset: 100 }
+              ]
+            }
           },
           bold: false,
           italic: false,
@@ -161,42 +108,6 @@
         season: luck_analysis.season
         league: luck_analysis.league_key
       row: 8
-      col: 0
-      width: 24
-      height: 10
-
-    # Actual vs Expected Wins Scatter
-    - title: "Actual vs Expected Wins"
-      name: actual_vs_expected
-      explore: luck_analysis
-      type: looker_scatter
-      fields: [
-        luck_analysis.team_name,
-        luck_analysis.expected_wins,
-        luck_analysis.actual_wins
-      ]
-      sorts: [luck_analysis.expected_wins desc]
-      limit: 500
-      x_axis_gridlines: true
-      y_axis_gridlines: true
-      show_view_names: false
-      show_y_axis_labels: true
-      show_y_axis_ticks: true
-      show_x_axis_label: true
-      show_x_axis_ticks: true
-      x_axis_label: "Expected Wins"
-      y_axis_labels: ["Actual Wins"]
-      show_value_labels: true
-      point_style: circle
-      series_colors:
-        luck_analysis.actual_wins: "#5C6BC0"
-      reference_lines: [{reference_type: line, range_start: max, range_end: min, margin_top: deviation,
-          margin_value: mean, margin_bottom: deviation, label_position: left, color: "#9E9E9E",
-          line_value: 'x', label: 'Perfect Luck Line'}]
-      listen:
-        season: luck_analysis.season
-        league: luck_analysis.league_key
-      row: 28
       col: 0
       width: 24
       height: 10
