@@ -65,7 +65,7 @@
         luck_analysis.luck_index,
         luck_analysis.luck_rating
       ]
-      sorts: [luck_analysis.all_play_rank asc]
+      sorts: [luck_analysis.actual_wins desc]
       limit: 500
       show_view_names: false
       show_row_numbers: false
