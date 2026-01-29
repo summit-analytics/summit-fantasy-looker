@@ -78,15 +78,15 @@
       enable_conditional_formatting: true
       conditional_formatting: [
         {
-          type: greater than,
-          value: 0,
-          background_color: "#34A853",
-          font_color: "#FFFFFF",
+          type: along a scale...,
+          value:,
+          background_color:,
+          font_color:,
           color_application: {
-            collection_id: google,
+            collection_id: custom,
             custom: {
-              id: luck-green-red,
-              label: Luck Green Red,
+              id: luck-red-white-green,
+              label: Luck Red White Green,
               type: continuous,
               stops: [
                 { color: "#EA4335", offset: 0 },
@@ -111,6 +111,30 @@
       col: 0
       width: 24
       height: 10
+
+    # How It Works
+    - title: ""
+      name: methodology
+      type: text
+      title_text: ""
+      subtitle_text: ""
+      body_text: |
+        <div style="background: #F5F5F5; padding: 16px 24px; border-radius: 8px; border-left: 4px solid #1A5C57;">
+          <div style="font-size: 16px; font-weight: bold; color: #1A2A3A; margin-bottom: 8px;">How Expected Wins Are Calculated</div>
+          <div style="font-size: 13px; color: #4A5A6A; line-height: 1.6;">
+            Each week, teams are ranked by points scored. A team's <strong>Expected Win %</strong> for that week is based on how many teams they outscored:
+            <br><br>
+            <code style="background: #E8E8E8; padding: 2px 6px; border-radius: 4px;">Expected Win % = (Num Teams - Weekly Rank) / (Num Teams - 1)</code>
+            <br><br>
+            For example, in a 12-team league, the highest scorer has 100% expected win probability, while the lowest has 0%.
+            <strong>Expected Wins</strong> is the sum of weekly expected win percentages across the regular season.
+            The <strong>Luck Index</strong> is the difference between actual wins and expected wins &mdash; positive means lucky, negative means unlucky.
+          </div>
+        </div>
+      row: 18
+      col: 0
+      width: 24
+      height: 5
 
     # Summary KPIs
     - title: "Luckiest Team"
